@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="testesPSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Produto">
+    <Key>
+      <PropertyRef Name="ID_PRODUTO" />
+    </Key>
+    <Property Name="ID_PRODUTO" Type="numeric" Precision="10" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PROMO" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="NOME" Type="varchar" MaxLength="150" />
+    <Property Name="PRECO" Type="numeric" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Promocao">
+    <Key>
+      <PropertyRef Name="ID_PROMO" />
+    </Key>
+    <Property Name="ID_PROMO" Type="numeric" Precision="10" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TIPO_PROMO" Type="numeric" Precision="2" Scale="0" StoreGeneratedPattern="None" />
+    <Property Name="QTD_LEVE_PROMO" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="QTD_PAGUE_PROMO" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="VLR_PAGUE" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="DESC_PROMO" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <Association Name="FK__Produto__ID_PROM__1273C1CD">
+    <End Role="Promocao" Type="Self.Promocao" Multiplicity="0..1" />
+    <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Promocao">
+        <PropertyRef Name="ID_PROMO" />
+      </Principal>
+      <Dependent Role="Produto">
+        <PropertyRef Name="ID_PROMO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="testesPSModelStoreContainer">
+    <EntitySet Name="Produto" EntityType="Self.Produto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Promocao" EntityType="Self.Promocao" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Produto__ID_PROM__1273C1CD" Association="Self.FK__Produto__ID_PROM__1273C1CD">
+      <End Role="Promocao" EntitySet="Promocao" />
+      <End Role="Produto" EntitySet="Produto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

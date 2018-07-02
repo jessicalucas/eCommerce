@@ -1,0 +1,64 @@
+﻿@model Teste_eCommerce.Models.Promocao
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Promocao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_PROMO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_PROMO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QTD_LEVE_PROMO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QTD_LEVE_PROMO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QTD_PAGUE_PROMO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QTD_PAGUE_PROMO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VLR_PAGUE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VLR_PAGUE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESC_PROMO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESC_PROMO)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

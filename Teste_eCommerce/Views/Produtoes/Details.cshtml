@@ -1,0 +1,42 @@
+﻿@model Teste_eCommerce.Models.Produto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Produto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRECO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRECO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Promocao.DESC_PROMO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Promocao.DESC_PROMO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PRODUTO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

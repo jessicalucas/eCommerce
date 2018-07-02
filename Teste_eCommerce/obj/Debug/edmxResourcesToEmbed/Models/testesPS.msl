@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="testesPSModelStoreContainer" CdmEntityContainer="testesPSEntities">
+    <EntitySetMapping Name="Produtoes">
+      <EntityTypeMapping TypeName="testesPSModel.Produto">
+        <MappingFragment StoreEntitySet="Produto">
+          <ScalarProperty Name="ID_PRODUTO" ColumnName="ID_PRODUTO" />
+          <ScalarProperty Name="ID_PROMO" ColumnName="ID_PROMO" />
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="PRECO" ColumnName="PRECO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Promocaos">
+      <EntityTypeMapping TypeName="testesPSModel.Promocao">
+        <MappingFragment StoreEntitySet="Promocao">
+          <ScalarProperty Name="ID_PROMO" ColumnName="ID_PROMO" />
+          <ScalarProperty Name="TIPO_PROMO" ColumnName="TIPO_PROMO" />
+          <ScalarProperty Name="QTD_LEVE_PROMO" ColumnName="QTD_LEVE_PROMO" />
+          <ScalarProperty Name="QTD_PAGUE_PROMO" ColumnName="QTD_PAGUE_PROMO" />
+          <ScalarProperty Name="VLR_PAGUE" ColumnName="VLR_PAGUE" />
+          <ScalarProperty Name="DESC_PROMO" ColumnName="DESC_PROMO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

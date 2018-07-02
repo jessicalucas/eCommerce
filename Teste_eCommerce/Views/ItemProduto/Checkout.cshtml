@@ -1,0 +1,34 @@
+﻿@model Teste_eCommerce.Models.ItemProduto
+
+@{
+    ViewBag.Title = "Carrinho";
+}
+
+@section Scripts {
+    <script src="~/Scripts/Acoesjs.js"></script>
+}
+
+<h2>Checkout</h2>
+
+<section id="carrinho" class="container">
+
+    <section id="buscas">
+        <table id="tabelaCarro">
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Total Por Produtos</th>
+                    <th>Promoção Aplicada</th>
+                </tr>
+            </thead>
+            <tbody id="tCar"></tbody>
+            <tfoot id="tFootCar">
+                <tr>
+                    <th></th>
+                    <th>Totalizador: </th>
+                    <th><input id="Totalizador" value="0" readonly /></th>
+            </tfoot>
+        </table>
+    </section>
+</section>
